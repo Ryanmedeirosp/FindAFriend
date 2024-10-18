@@ -55,19 +55,19 @@ describe('find all Pets Use Case', () => {
     })
 
     await petsRepository.create({
-      age: '10',
+      age: '30',
       description: 'pet do zito',
       name: 'zito ',
       org_id: org.id,
     })
 
     await petsRepository.create({
-      age: '112',
+      age: '2',
       description: 'pet do zito',
       name: 'zito ',
       org_id: org.id,
     })
-    const { pets } = await sut.execute({ city: org.city, age: '10' })
+    const { pets } = await sut.execute({ city: org.city, age: '2' })
 
     expect(pets).toHaveLength(1)
   })
